@@ -1,0 +1,40 @@
+{
+    "name": "v-dem/queasy2-webapp",
+    "description": "Web application sample, part of QuEasy PHP Framework v2",
+    "homepage": "https://github.com/v-dem/queasy2-webapp/",
+    "keywords": ["php", "framework", "queasy", "php framework"],
+    "license": "Unlicense",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Vitaly Demyanenko",
+            "email": "vitaly_demyanenko@yahoo.com"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "v-dem/queasy2-config": "dev-master",
+        "v-dem/queasy2-helper": "dev-master",
+        "v-dem/queasy2-logger": "dev-master",
+        "v-dem/queasy2-db": "dev-master",
+        "v-dem/queasy2-http": "dev-master",
+        "v-dem/queasy2-framework": "dev-master"
+    },
+    "autoload":{
+        "psr-4":{
+            "app\\": "app/"
+        }
+    },
+    "scripts": {
+        "post-create-project": [
+            "chmod -R 777 database",
+            "chmod -R 777 logs",
+            "php database/create.php",
+            "chmod 777 database/database.sqlite"
+        ]
+    }
+}
